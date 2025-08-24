@@ -1,3 +1,4 @@
+
 import { useNavigate } from 'react-router-dom';
 import { NoraLayout } from '../components/NoraLayout';
 import { NoraLogo } from '../components/NoraLogo';
@@ -8,13 +9,15 @@ export const PermissionPage = () => {
 
   return (
     <NoraLayout showProgress currentStep={1} totalSteps={3}>
-      <div className="flex-1 flex flex-col justify-center">
+      <div className="flex-1 flex flex-col">
         <div className="mb-12 text-center">
           <NoraLogo size="md" animated={false} />
           <p className="text-muted-foreground text-lg mt-4">
             your financial co-pilot
           </p>
         </div>
+
+        <div className="flex-1"></div>
 
         <div className="mb-12">
           <h2 className="text-xl font-medium text-nora-yellow mb-6">
