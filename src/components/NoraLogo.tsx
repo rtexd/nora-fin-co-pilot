@@ -1,0 +1,22 @@
+interface NoraLogoProps {
+  size?: 'sm' | 'md' | 'lg';
+  animated?: boolean;
+}
+
+export const NoraLogo = ({ size = 'lg', animated = true }: NoraLogoProps) => {
+  const sizeClasses = {
+    sm: 'text-2xl',
+    md: 'text-4xl',
+    lg: 'text-6xl'
+  };
+
+  return (
+    <div className="text-center">
+      <h1 
+        className={`nora-logo ${sizeClasses[size]} ${animated ? 'nora-glow' : ''} lowercase tracking-wide`}
+      >
+        nora
+      </h1>
+    </div>
+  );
+};

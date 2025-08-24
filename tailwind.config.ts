@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+				'montserrat': ['Montserrat Alternates', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,16 +56,31 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// NORA Brand Colors
+				nora: {
+					blue: 'hsl(var(--nora-blue))',
+					purple: 'hsl(var(--nora-purple))',
+					pink: 'hsl(var(--nora-pink))',
+					yellow: 'hsl(var(--nora-yellow))',
+				},
+			},
+			backgroundImage: {
+				'gradient-nora': 'var(--gradient-nora)',
+				'gradient-subtle': 'var(--gradient-subtle)',
+				'gradient-glow': 'var(--gradient-glow)',
+			},
+			boxShadow: {
+				'nora': 'var(--shadow-nora)',
+				'glow': 'var(--shadow-glow)',
+				'card': 'var(--shadow-card)',
+			},
+			spacing: {
+				'1': '4px',
+				'6': '24px',
+				'8': '32px',
+				'10': '40px',
+				'12': '48px',
+				'14': '56px',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

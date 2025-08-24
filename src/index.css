@@ -1,42 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat+Alternates:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* NORA Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* NORA Dark Theme */
+    --background: 220 15% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 15% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 15% 10%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* NORA Brand Colors */
+    --nora-blue: 208 100% 80%;
+    --nora-purple: 243 100% 72%; 
+    --nora-pink: 319 100% 76%;
+    --nora-yellow: 44 100% 58%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Semantic Colors */
+    --primary: 243 100% 72%;
+    --primary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 5% 65%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 208 100% 80%;
+    --accent-foreground: 220 15% 8%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --radius: 0.5rem;
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 243 100% 72%;
+
+    --radius: 12px;
+
+    /* NORA Gradients */
+    --gradient-nora: linear-gradient(135deg, hsl(var(--nora-blue)), hsl(var(--nora-purple)), hsl(var(--nora-pink)), hsl(var(--nora-yellow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(220 15% 6%));
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--nora-purple) / 0.3), transparent 70%);
+
+    /* Shadows */
+    --shadow-nora: 0 0 40px hsl(var(--nora-purple) / 0.3);
+    --shadow-glow: 0 0 20px hsl(var(--nora-blue) / 0.4);
+    --shadow-card: 0 8px 32px hsl(220 15% 4% / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -54,43 +76,161 @@ All colors MUST be HSL.
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+}
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+/* NORA Component Styles */
+@layer components {
+  /* Background with subtle noise */
+  .nora-background {
+    background: var(--gradient-subtle);
+    position: relative;
+  }
+  
+  .nora-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+    background-size: 20px 20px;
+    pointer-events: none;
+  }
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+  /* NORA Logo */
+  .nora-logo {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+    background: var(--gradient-nora);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-flow 3s ease-in-out infinite;
+    filter: drop-shadow(var(--shadow-nora));
+  }
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+  @keyframes gradient-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+  /* Neon glow animation */
+  .nora-glow {
+    animation: neon-pulse 2s ease-in-out infinite alternate;
+  }
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+  @keyframes neon-pulse {
+    from { filter: drop-shadow(0 0 10px hsl(var(--nora-purple) / 0.5)); }
+    to { filter: drop-shadow(0 0 30px hsl(var(--nora-purple) / 0.8)); }
+  }
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+  /* Progress indicator */
+  .progress-indicator {
+    background: hsl(var(--border));
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+  .progress-fill {
+    background: var(--gradient-nora);
+    height: 100%;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+  /* Input field styling */
+  .nora-input {
+    background: transparent;
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    color: hsl(var(--foreground));
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition-smooth);
+  }
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  .nora-input:focus {
+    outline: none;
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
+  }
+
+  .nora-input::placeholder {
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Button variants */
+  .btn-nora-primary {
+    background: var(--gradient-nora);
+    color: hsl(var(--primary-foreground));
+    border: none;
+    border-radius: var(--radius);
+    padding: 16px 24px;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+  }
+
+  .btn-nora-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-nora-secondary {
+    background: transparent;
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 16px 24px;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+  }
+
+  .btn-nora-secondary:hover {
+    background: hsl(var(--secondary));
+    border-color: hsl(var(--primary));
+  }
+
+  /* Tag/chip styles */
+  .nora-tag {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: 24px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+  }
+
+  .nora-tag:hover {
+    background: hsl(var(--primary) / 0.1);
+    border-color: hsl(var(--primary));
+  }
+
+  .nora-tag.selected {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-color: hsl(var(--primary));
+  }
+
+  /* Chat message styles */
+  .chat-message {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 16px 0;
+    box-shadow: var(--shadow-card);
+  }
+
+  .chat-message.from-nora {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
+    border-color: hsl(var(--primary) / 0.3);
   }
 }
 
@@ -100,6 +240,12 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
