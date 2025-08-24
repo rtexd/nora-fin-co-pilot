@@ -82,7 +82,7 @@
 @layer components {
   /* Background with subtle noise */
   .nora-background {
-    background: var(--gradient-subtle);
+    background: #000000;
     position: relative;
   }
   
@@ -93,8 +93,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
-    background-size: 20px 20px;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.01) 0.5px, transparent 0.5px);
+    background-size: 50px 50px, 80px 80px, 30px 30px;
     pointer-events: none;
   }
 
