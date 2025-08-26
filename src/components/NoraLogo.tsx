@@ -1,4 +1,3 @@
-import { BackgroundGradient } from "./ui/background-gradient";
 
 interface NoraLogoProps {
   size?: 'sm' | 'md' | 'lg';
@@ -12,16 +11,14 @@ export const NoraLogo = ({
   const sizeClasses = {
     sm: 'text-2xl',
     md: 'text-4xl',
-    lg: 'text-[32px]'
+    lg: 'text-6xl'
   };
 
   return (
-    <div className="text-left">
-      <BackgroundGradient className="inline-block" containerClassName="inline-block">
-        <h1 className={`nora-logo font-montserrat font-normal ${sizeClasses[size]} ${animated ? 'nora-glow' : ''} lowercase tracking-tight px-2`}>
-          NORA
-        </h1>
-      </BackgroundGradient>
+    <div className="text-center">
+      <h1 className={`nora-logo font-montserrat font-normal ${sizeClasses[size]} ${animated ? 'nora-glow' : ''} lowercase tracking-wide`}>
+        NORA
+      </h1>
     </div>
   );
 };
