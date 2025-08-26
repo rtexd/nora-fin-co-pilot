@@ -34,7 +34,7 @@ export const PermissionPage = () => {
       <div className="pb-8 space-y-4">
         <NoraButton 
           fullWidth 
-          size="lg"
+          size="md"
           onClick={() => navigate('/onboarding')}
         >
           Ok
@@ -43,6 +43,7 @@ export const PermissionPage = () => {
         <NoraButton 
           variant="ghost" 
           fullWidth
+          size="md"
           onClick={() => navigate('/')}
         >
           Not now
