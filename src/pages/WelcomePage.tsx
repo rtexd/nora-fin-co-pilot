@@ -4,11 +4,10 @@ import React from 'react';
 import { NoraLayout } from '../components/NoraLayout';
 import { NoraLogo } from '../components/NoraLogo';
 import { NoraButton } from '../components/NoraButton';
-import { AuroraBackground } from '../components/ui/aurora-background';
 export const WelcomePage = () => {
   const navigate = useNavigate();
   return (
-    <AuroraBackground className="bg-black">
+    <div className="bg-black min-h-screen">
       <NoraLayout showProgress currentStep={1} totalSteps={3}>
         <div className="flex-1 flex flex-col justify-center items-center text-center">
           <div className="mb-8">
@@ -41,6 +40,6 @@ export const WelcomePage = () => {
           </NoraButton>
         </div>
       </NoraLayout>
-    </AuroraBackground>
+    </div>
   );
 };
