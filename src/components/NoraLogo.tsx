@@ -9,14 +9,14 @@ export const NoraLogo = ({
   animated = true
 }: NoraLogoProps) => {
   const sizeClasses = {
-    sm: 'text-2xl',
-    md: 'text-4xl',
-    lg: 'text-6xl'
+    sm: 'text-3xl',
+    md: 'text-5xl',
+    lg: 'text-7xl'
   };
 
   return (
     <div className="text-center">
-      <h1 className={`nora-logo font-montserrat font-normal ${sizeClasses[size]} ${animated ? 'nora-glow' : ''} lowercase tracking-wide`}>
+      <h1 className={`nora-logo font-montserrat font-normal ${sizeClasses[size]} ${animated ? 'nora-glow' : ''} lowercase tracking-tighter`}>
         NORA
       </h1>
     </div>

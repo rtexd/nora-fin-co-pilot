@@ -167,7 +167,7 @@
   /* Button variants */
   .btn-nora-primary {
     background: var(--gradient-nora);
-    color: hsl(var(--primary-foreground));
+    color: hsl(0 0% 0%);
     border: none;
     border-radius: var(--radius);
     padding: 16px 24px;
