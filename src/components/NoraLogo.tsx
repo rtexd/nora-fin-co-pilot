@@ -11,12 +11,12 @@ export const NoraLogo = ({
   const sizeClasses = {
     sm: 'text-2xl',
     md: 'text-4xl',
-    lg: 'text-[32px]'
+    lg: 'text-6xl'
   };
 
   return (
-    <div className="text-left">
-      <h1 className={`nora-logo font-montserrat font-normal ${sizeClasses[size]} ${animated ? 'nora-glow' : ''} lowercase tracking-tight`}>
+    <div className="text-center">
+      <h1 className={`nora-logo font-montserrat font-normal ${sizeClasses[size]} ${animated ? 'nora-glow' : ''} lowercase tracking-wide`}>
         NORA
       </h1>
     </div>
