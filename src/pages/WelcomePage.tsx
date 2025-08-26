@@ -1,4 +1,6 @@
+// @ts-ignore
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import { NoraLayout } from '../components/NoraLayout';
 import { NoraLogo } from '../components/NoraLogo';
 import { NoraButton } from '../components/NoraButton';
@@ -10,11 +12,13 @@ export const WelcomePage = () => {
       <NoraLayout showProgress currentStep={1} totalSteps={3}>
         <div className="flex-1 flex flex-col justify-center items-center text-center">
           <div className="mb-8">
-            <p className="text-muted-foreground text-lg mb-2">Hi, I'm</p>
-            <NoraLogo size="lg" animated />
-            <p className="text-muted-foreground text-lg mt-4">
-              your financial co-pilot
-            </p>
+            <div className="flex flex-col items-center">
+              <p className="text-muted-foreground text-[19.05px] mb-0">Hi, I'm</p>
+              <NoraLogo size="lg" animated />
+              <p className="text-muted-foreground text-[19.05px] mt-0">
+                your financial co-pilot
+              </p>
+            </div>
           </div>
         </div>
 

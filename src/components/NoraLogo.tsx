@@ -1,4 +1,7 @@
 
+// @ts-ignore
+import React from 'react';
+
 interface NoraLogoProps {
   size?: 'sm' | 'md' | 'lg';
   animated?: boolean;
@@ -11,7 +14,7 @@ export const NoraLogo = ({
   const sizeClasses = {
     sm: 'text-3xl',
     md: 'text-5xl',
-    lg: 'text-7xl'
+    lg: 'text-[4rem]'
   };
 
   return (
