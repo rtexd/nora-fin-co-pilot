@@ -19,7 +19,7 @@ export const NoraLogo = ({
 
   return (
     <div className="text-center">
-      <h1 className={`nora-logo font-montserrat font-normal ${sizeClasses[size]} ${animated ? 'nora-glow' : ''} lowercase tracking-tighter`}>
+      <h1 className={`nora-logo font-montserrat font-normal ${animated ? 'nora-glow' : ''} lowercase tracking-tighter`} style={{width: '227px', height: '86px', fontSize: '70px', flexShrink: 0}}>
         NORA
       </h1>
     </div>

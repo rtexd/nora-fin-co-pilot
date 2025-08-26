@@ -104,14 +104,12 @@
   /* NORA Logo */
   .nora-logo {
     font-family: 'Montserrat Alternates', sans-serif;
-    font-weight: 600;
-    background: var(--gradient-nora);
+    font-weight: 400;
+    background: radial-gradient(85.05% 95.99% at 7.71% 58.79%, #99CFFF 0%, #776FFF 32%, #FF85D8 69.33%, #FFC62B 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-    animation: gradient-flow 3s ease-in-out infinite;
-    filter: drop-shadow(var(--shadow-nora));
+    filter: drop-shadow(0 0 0.984px rgba(0, 0, 0, 0.04)) drop-shadow(0 1.968px 19.586px rgba(32, 127, 251, 0.60)) drop-shadow(0 -6.89px 24.015px rgba(43, 0, 255, 0.58));
   }
 
   @keyframes gradient-flow {
