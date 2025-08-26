@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NoraLayout } from '../components/NoraLayout';
 import { NoraLogo } from '../components/NoraLogo';
 import { NoraInput } from '../components/NoraInput';
 import { NoraButton } from '../components/NoraButton';
-import { Menu, Send, Copy, Share } from 'lucide-react';
+import { Menu, Send, Copy, Share, Bot, User } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -16,6 +16,16 @@ export const ChatPage = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   useEffect(() => {
     // Load user data and create initial message
@@ -49,21 +59,67 @@ export const ChatPage = () => {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const currentInput = input;
     setInput('');
     setIsLoading(true);
 
-    // Simulate AI response
-    setTimeout(() => {
+    try {
+      // Get user context for personalized responses
+      const onboardingData = localStorage.getItem('noraOnboardingData');
+      const goalsData = localStorage.getItem('noraGoalsData');
+      
+      let contextPrompt = "You are NORA, a friendly and intelligent financial assistant. ";
+      
+      if (onboardingData && goalsData) {
+        const userData = JSON.parse(onboardingData);
+        const goals = JSON.parse(goalsData);
+        contextPrompt += `The user's name is ${userData.name}. They have R$${userData.currentSavings || '5,000'} in savings, earn R$${userData.monthlyIncome || '3,000'} monthly, and their goal is to save R$${goals.targetAmount || '50,000'} in ${goals.timeframe || '2 months'} for ${goals.purpose || 'opening a coffee shop'}. `;
+      }
+      
+      contextPrompt += "Provide helpful, personalized financial advice. Keep responses conversational and supportive. Use emojis sparingly and focus on actionable advice.";
+
+      const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyD6TYXQPeUkg_MXJU31e8gjaiSbJt2WZbI', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{
+              text: `${contextPrompt}\n\nUser message: ${currentInput}`
+            }]
+          }]
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`API Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const aiResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I couldn't process that request. Could you please try again?";
+
       const noraResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: "That's a great question! Based on your current situation, I'd recommend focusing on building a diversified income stream while maintaining your savings discipline. Would you like me to break down some specific strategies for your coffee shop goal?",
+        content: aiResponse,
         sender: 'nora',
         timestamp: new Date()
       };
       
       setMessages(prev => [...prev, noraResponse]);
+    } catch (error) {
+      console.error('Error calling Gemini API:', error);
+      const errorResponse: Message = {
+        id: (Date.now() + 1).toString(),
+        content: "I'm experiencing some technical difficulties right now. Please try again in a moment. In the meantime, I'm here to help with any financial questions you might have!",
+        sender: 'nora',
+        timestamp: new Date()
+      };
+      
+      setMessages(prev => [...prev, errorResponse]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -77,29 +133,75 @@ export const ChatPage = () => {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 space-y-6">
+        {messages.length === 0 && (
+          <div className="flex flex-col items-center justify-center h-full text-center space-y-4">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+              <Bot className="w-8 h-8 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Olá! Eu sou a NORA 👋</h3>
+              <p className="text-muted-foreground max-w-md">
+                Sua assistente financeira inteligente. Estou aqui para ajudar você a alcançar seus objetivos financeiros!
+              </p>
+            </div>
+          </div>
+        )}
+        
         {messages.map((message) => (
           <div
             key={message.id}
-            className={`chat-message ${
-              message.sender === 'nora' ? 'from-nora' : ''
+            className={`flex items-start space-x-3 ${
+              message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''
             }`}
           >
-            <div className="whitespace-pre-wrap text-sm leading-relaxed">
-              {message.content}
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+              message.sender === 'nora' 
+                ? 'bg-primary text-primary-foreground' 
+                : 'bg-secondary text-secondary-foreground'
+            }`}>
+              {message.sender === 'nora' ? (
+                <Bot className="w-4 h-4" />
+              ) : (
+                <User className="w-4 h-4" />
+              )}
+            </div>
+            <div className={`max-w-[80%] rounded-2xl px-4 py-3 ${
+              message.sender === 'nora'
+                ? 'bg-secondary text-secondary-foreground'
+                : 'bg-primary text-primary-foreground'
+            }`}>
+              <div className="whitespace-pre-wrap text-sm leading-relaxed">
+                {message.content}
+              </div>
+              <div className={`text-xs mt-2 opacity-70 ${
+                message.sender === 'user' ? 'text-right' : 'text-left'
+              }`}>
+                {message.timestamp.toLocaleTimeString('pt-BR', { 
+                  hour: '2-digit', 
+                  minute: '2-digit' 
+                })}
+              </div>
             </div>
           </div>
         ))}
         
         {isLoading && (
-          <div className="chat-message from-nora">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+          <div className="flex items-start space-x-3">
+            <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">
+              <Bot className="w-4 h-4" />
+            </div>
+            <div className="bg-secondary rounded-2xl px-4 py-3">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+              </div>
             </div>
           </div>
         )}
+        
+        <div ref={messagesEndRef} />
       </div>
 
       {/* Bottom Section */}
@@ -118,28 +220,36 @@ export const ChatPage = () => {
         </div>
 
         {/* Input */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-end space-x-3">
           <div className="flex-1">
             <NoraInput
-              placeholder="Ask anything..."
+              ref={inputRef}
+              placeholder="Digite sua mensagem..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-              className="border-none bg-secondary"
+              onKeyPress={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  sendMessage();
+                }
+              }}
+              className="border-none bg-secondary resize-none min-h-[44px] max-h-32"
+              disabled={isLoading}
             />
           </div>
-          <div className="flex items-center space-x-2">
-            <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
-              <Copy className="w-5 h-5" />
-            </button>
-            <NoraButton
-              onClick={sendMessage}
-              disabled={!input.trim() || isLoading}
-              className="p-2 min-w-0"
-            >
-              <Send className="w-5 h-5" />
-            </NoraButton>
-          </div>
+          <NoraButton
+            onClick={sendMessage}
+            disabled={!input.trim() || isLoading}
+            className={`p-3 min-w-0 transition-all duration-200 ${
+              input.trim() && !isLoading 
+                ? 'bg-primary hover:bg-primary/90 scale-100' 
+                : 'bg-muted scale-95'
+            }`}
+          >
+            <Send className={`w-5 h-5 transition-transform duration-200 ${
+              isLoading ? 'animate-pulse' : ''
+            }`} />
+          </NoraButton>
         </div>
       </div>
     </div>
