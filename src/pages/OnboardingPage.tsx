@@ -108,7 +108,7 @@ export const OnboardingPage = () => {
       <div className="pb-8">
         <NoraButton 
           fullWidth 
-          size="lg"
+          size="md"
           onClick={handleNext}
           disabled={!formData.name || !formData.birthday || !formData.income || !formData.job}
         >
