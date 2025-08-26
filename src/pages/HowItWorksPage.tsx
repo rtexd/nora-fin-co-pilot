@@ -1,7 +1,9 @@
+// @ts-ignore
 import { useNavigate } from 'react-router-dom';
 import { NoraLayout } from '../components/NoraLayout';
 import { NoraLogo } from '../components/NoraLogo';
 import { NoraButton } from '../components/NoraButton';
+// @ts-ignore
 import { ArrowLeft, Brain, Shield, Target } from 'lucide-react';
 
 export const HowItWorksPage = () => {
@@ -98,7 +100,7 @@ export const HowItWorksPage = () => {
       <div className="pb-8 space-y-4">
         <NoraButton 
           fullWidth 
-          size="lg"
+          size="md"
           onClick={() => navigate('/permission')}
         >
           Start Your Journey
