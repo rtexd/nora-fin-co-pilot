@@ -103,7 +103,7 @@ export const GoalsPage = () => {
       <div className="pb-8">
         <NoraButton 
           fullWidth 
-          size="lg"
+          size="md"
           onClick={handleDone}
           disabled={selectedGoals.length === 0 && !customGoal}
         >
