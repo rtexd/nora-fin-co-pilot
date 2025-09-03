@@ -1,7 +1,9 @@
+// @ts-ignore
 import { useState } from 'react';
+// @ts-ignore
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import { NoraInput } from '../components/NoraInput';
-import { NoraButton } from '../components/NoraButton';
 import { NoraTag } from '../components/NoraTag';
 
 export const OnboardingPage = () => {

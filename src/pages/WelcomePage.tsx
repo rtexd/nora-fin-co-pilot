@@ -1,8 +1,17 @@
+// @ts-ignore
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
 
 export const WelcomePage = () => {
   const navigate = useNavigate();
+  
+  const handleGetStarted = () => {
+    navigate('/permission');
+  };
+  
+  const handleHowItWorks = () => {
+    navigate('/how-it-works');
+  };
   
   return (
     <div className="min-h-screen w-full max-w-[375px] mx-auto" style={{
@@ -56,7 +65,7 @@ export const WelcomePage = () => {
             >
               your financial co-pilot
             </p>
-</div>
+          </div>
         </div>
 
         {/* Bottom Section - Description and Actions */}
@@ -72,7 +81,7 @@ export const WelcomePage = () => {
           
           <div className="space-y-4">
             <button
-              onClick={() => navigate('/permission')}
+              onClick={handleGetStarted}
               className="w-full h-12 rounded-full font-inter font-semibold text-base text-white transition-all duration-300 hover:scale-[1.02]"
               style={{
                 background: 'linear-gradient(90deg, rgba(153, 206, 252, 1) 0%, rgba(167, 89, 211, 1) 28%, rgba(216, 80, 91, 1) 75%, rgba(255, 198, 43, 1) 100%)',
@@ -83,7 +92,7 @@ export const WelcomePage = () => {
             </button>
             
             <button
-              onClick={() => navigate('/how-it-works')}
+              onClick={handleHowItWorks}
               className="w-full h-12 rounded-full font-inter font-semibold text-base text-[#717171] transition-all duration-300 hover:text-white"
               style={{
                 background: 'rgba(0, 0, 0, 0.2)',
