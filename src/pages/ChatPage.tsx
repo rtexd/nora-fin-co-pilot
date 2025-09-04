@@ -123,9 +123,9 @@ export const ChatPage = () => {
   };
 
   return (
-    <div className="min-h-screen nora-background font-inter text-foreground flex flex-col">
+    <NoraLayout>
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-border">
+      <div className="flex items-center justify-between pb-4 border-b border-border">
         <NoraLogo size="sm" animated={false} />
         <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
           <Menu className="w-6 h-6" />
@@ -133,7 +133,7 @@ export const ChatPage = () => {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-6">
+      <div className="flex-1 overflow-y-auto space-y-6">
         {messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-center space-y-4">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
@@ -168,8 +168,8 @@ export const ChatPage = () => {
             </div>
             <div className={`max-w-[80%] rounded-2xl px-4 py-3 ${
               message.sender === 'nora'
-                ? 'bg-secondary text-secondary-foreground'
-                : 'bg-primary text-primary-foreground'
+                ? 'bg-[rgba(0,0,0,0.2)] text-white'
+                : 'bg-gradient-to-r from-[#99CEFF] via-[#A759D3] via-[#D8505B] to-[#FFC62B] text-white'
             }`}>
               <div className="whitespace-pre-wrap text-sm leading-relaxed">
                 {message.content}
@@ -205,7 +205,7 @@ export const ChatPage = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="p-4 border-t border-border">
+      <div className="pt-4 border-t border-border">
         {/* Quick Actions */}
         <div className="flex items-center justify-between mb-4">
           <button className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -240,10 +240,10 @@ export const ChatPage = () => {
           <NoraButton
             onClick={sendMessage}
             disabled={!input.trim() || isLoading}
-            className={`p-3 min-w-0 transition-all duration-200 ${
+            className={`p-3 min-w-0 transition-all duration-200 rounded-[2222px] flex items-center justify-center ${
               input.trim() && !isLoading 
-                ? 'bg-primary hover:bg-primary/90 scale-100' 
-                : 'bg-muted scale-95'
+                ? 'bg-gradient-to-r from-[#99CEFF] via-[#A759D3] via-[#D8505B] to-[#FFC62B] text-white hover:scale-[1.02] scale-100' 
+                : 'bg-[rgba(0,0,0,0.2)] text-[#717171] scale-95'
             }`}
           >
             <Send className={`w-5 h-5 transition-transform duration-200 ${
@@ -252,6 +252,6 @@ export const ChatPage = () => {
           </NoraButton>
         </div>
       </div>
-    </div>
+    </NoraLayout>
   );
 };

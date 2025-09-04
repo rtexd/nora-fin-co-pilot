@@ -46,6 +46,18 @@
 
     --radius: 12px;
 
+    /* Layout Vars (frame 402x874 + safe padding) */
+    --app-width: 402px;
+    --pad-x: 32px;
+    --pad-y: 40px;
+    --gap-tabs-main: 164px;
+    --logo-top: 56px;
+    --logo-to-buttons: 280px; /* Welcome page: logo → buttons */
+    --logo-to-text: 244px;    /* Permission page: logo → text */
+    --text-to-buttons: 36px;  /* Permission page: text → buttons */
+    --frame-height: 874px;
+    --main-height: calc(var(--frame-height) - (var(--pad-y) * 2));
+
     /* NORA Gradients */
     --gradient-nora: linear-gradient(135deg, hsl(var(--nora-blue)), hsl(var(--nora-purple)), hsl(var(--nora-pink)), hsl(var(--nora-yellow)));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(220 15% 6%));
@@ -164,14 +176,15 @@
 
   /* Button variants */
   .btn-nora-primary {
-    background: var(--gradient-nora);
-    color: hsl(0 0% 0%);
+    background: linear-gradient(90deg, rgba(153, 206, 252, 1) 0%, rgba(167, 89, 211, 1) 28%, rgba(216, 80, 91, 1) 75%, rgba(255, 198, 43, 1) 100%);
+    color: #FFFFFF;
     border: none;
-    border-radius: var(--radius);
+    border-radius: 2222px;
     padding: 16px 24px;
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition-smooth);
     cursor: pointer;
+    line-height: 1.5em;
   }
 
   .btn-nora-primary:hover {
@@ -183,11 +196,12 @@
     background: transparent;
     color: hsl(var(--foreground));
     border: 1px solid hsl(var(--border));
-    border-radius: var(--radius);
+    border-radius: 2222px;
     padding: 16px 24px;
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition-smooth);
     cursor: pointer;
+    line-height: 1.5em;
   }
 
   .btn-nora-secondary:hover {

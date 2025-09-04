@@ -52,7 +52,7 @@ export const GoalsPage = () => {
 
         <div className="space-y-8">
           <div>
-            <h2 className="text-lg font-medium text-nora-yellow mb-6">
+            <h2 className="text-lg font-medium text-[#F2A938] mb-6">
               1. What's your main financial goal right now?
             </h2>
             <div className="flex flex-wrap gap-3 mb-4">
@@ -74,7 +74,7 @@ export const GoalsPage = () => {
           </div>
 
           <div>
-            <h2 className="text-lg font-medium text-nora-yellow mb-4">
+            <h2 className="text-lg font-medium text-[#F2A938] mb-4">
               2. Do you have an amount/target in mind?
             </h2>
             <NoraInput
@@ -82,13 +82,13 @@ export const GoalsPage = () => {
               value={targetAmount}
               onChange={(e) => setTargetAmount(e.target.value)}
             />
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-sm text-[#B3B3B3] mt-2">
               If you're not sure, I'll help you estimate.
             </p>
           </div>
 
           <div>
-            <h2 className="text-lg font-medium text-nora-yellow mb-4">
+            <h2 className="text-lg font-medium text-[#F2A938] mb-4">
               3. If you have something to agree:
             </h2>
             <NoraInput
@@ -100,12 +100,13 @@ export const GoalsPage = () => {
         </div>
       </div>
 
-      <div className="pb-8">
+      <div>
         <NoraButton 
           fullWidth 
           size="md"
           onClick={handleDone}
           disabled={selectedGoals.length === 0 && !customGoal}
+          className="h-[52px] leading-[1.5em] font-semibold"
         >
           Done!
         </NoraButton>

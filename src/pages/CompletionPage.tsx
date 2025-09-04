@@ -18,11 +18,12 @@ export const CompletionPage = () => {
         </div>
       </div>
 
-      <div className="pb-8">
+      <div>
         <NoraButton 
           fullWidth 
           size="md"
           onClick={() => navigate('/chat')}
+          className="h-[52px] leading-[1.5em] font-semibold"
         >
           Great! Let's chat 💬
         </NoraButton>

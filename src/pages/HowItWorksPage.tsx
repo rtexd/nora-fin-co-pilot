@@ -44,10 +44,10 @@ export const HowItWorksPage = () => {
         {/* Content */}
         <div className="space-y-8">
           <div className="text-center">
-            <h1 className="text-2xl font-medium text-nora-yellow mb-4">
+            <h1 className="text-2xl font-medium text-[#F2A938] mb-4">
               How NORA Works
             </h1>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-white font-inter font-normal text-base leading-[1.2]">
               Your AI financial co-pilot uses intelligent analysis to help you make better money decisions and reach your financial goals faster.
             </p>
           </div>
@@ -62,10 +62,10 @@ export const HowItWorksPage = () => {
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-foreground mb-2">
+                      <h3 className="font-medium text-white mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
+                      <p className="text-[#B3B3B3] text-sm leading-[1.2]">
                         {feature.description}
                       </p>
                     </div>
@@ -76,7 +76,7 @@ export const HowItWorksPage = () => {
           </div>
 
           <div className="chat-message from-nora">
-            <h3 className="font-medium text-nora-yellow mb-3">
+            <h3 className="font-medium text-[#F2A938] mb-3">
               Getting Started is Simple:
             </h3>
             <ol className="space-y-2 text-sm">
@@ -97,19 +97,22 @@ export const HowItWorksPage = () => {
         </div>
       </div>
 
-      <div className="pb-8 space-y-4">
+      <div className="space-y-4">
         <NoraButton 
           fullWidth 
           size="md"
           onClick={() => navigate('/permission')}
+          className="h-[52px] leading-[1.5em] font-semibold"
         >
           Start Your Journey
         </NoraButton>
         
         <NoraButton 
-          variant="ghost" 
+          variant="outline-soft" 
           fullWidth
+          size="md"
           onClick={() => navigate('/')}
+          className="h-[52px] leading-[1.5em] font-semibold"
         >
           Back to Home
         </NoraButton>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { NoraInput } from '../components/NoraInput';
 import { NoraButton } from '../components/NoraButton';
 import { NoraTag } from '../components/NoraTag';
+import { NoraLayout } from '../components/NoraLayout';
 
 export const OnboardingPage = () => {
   const navigate = useNavigate();
@@ -29,31 +30,9 @@ export const OnboardingPage = () => {
   const isFormValid = formData.name && formData.birthday && formData.income && formData.bankAmount;
 
   return (
-    <div className="min-h-screen w-full max-w-[375px] mx-auto" style={{
-      background: 'linear-gradient(180deg, rgba(0, 0, 0, 1) 57%, rgba(34, 34, 34, 1) 100%)'
-    }}>
-      {/* Header with NORA logo */}
-      <div className="px-6 pt-8 pb-4">
-        <div className="flex justify-center mb-6">
-          <h1 
-            className="font-normal leading-[1.2] text-center"
-            style={{
-              fontFamily: 'Montserrat Alternates',
-              fontSize: '32px',
-              background: 'radial-gradient(circle at 8% 59%, rgba(153, 207, 255, 1) 0%, rgba(119, 111, 255, 1) 32%, rgba(255, 133, 216, 1) 69%, rgba(255, 198, 43, 1) 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              textShadow: '0px 0px 0.9842px rgba(0, 0, 0, 0.04), 0px 1.9685px 19.5861px rgba(32, 127, 251, 0.6), 0px -6.8896px 24.0151px rgba(43, 0, 255, 0.58)'
-            }}
-          >
-            NORA
-          </h1>
-        </div>
-      </div>
-
+    <NoraLayout showProgress currentStep={2} totalSteps={3}>
       {/* Form Content */}
-      <div className="px-6 pb-6" style={{ height: 'calc(100vh - 140px)', overflowY: 'auto' }}>
+      <div className="flex-1 overflow-y-auto">
         <div className="space-y-6">
           {/* Name Field */}
           <div className="space-y-2">
@@ -166,11 +145,11 @@ export const OnboardingPage = () => {
       </div>
 
       {/* Next Button */}
-      <div className="px-6 pb-8">
+      <div>
         <button
           onClick={handleNext}
           disabled={!isFormValid}
-          className="w-full h-12 rounded-full font-inter font-semibold text-base text-white transition-all duration-300"
+          className="w-full h-[52px] rounded-[2222px] font-inter font-semibold text-base text-white transition-all duration-300 flex items-center justify-center leading-[1.5em]"
           style={{
             background: isFormValid 
               ? 'linear-gradient(90deg, rgba(153, 206, 252, 1) 0%, rgba(167, 89, 211, 1) 28%, rgba(216, 80, 91, 1) 75%, rgba(255, 198, 43, 1) 100%)'
@@ -183,6 +162,6 @@ export const OnboardingPage = () => {
           Next
         </button>
       </div>
-    </div>
+    </NoraLayout>
   );
 };

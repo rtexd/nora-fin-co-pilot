@@ -1,5 +1,4 @@
 
-// @ts-ignore
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,9 +27,9 @@ export const NoraLogo = ({
   };
 
   const logoElement = (
-    <h1 className={`nora-logo font-montserrat font-normal ${animated ? 'nora-glow' : ''} lowercase tracking-tighter`} style={{width: '227px', height: '86px', fontSize: '70px', flexShrink: 0}}>
-      NORA
-    </h1>
+    <div className={`nora-logo ${animated ? 'nora-glow' : ''}`} style={{width: '227px', height: '86px', flexShrink: 0}}>
+      <img src="/nora_logo.svg" alt="NORA" className="w-full h-full" />
+    </div>
   );
 
   if (clickable) {
