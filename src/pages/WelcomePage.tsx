@@ -5,24 +5,25 @@ export const WelcomePage = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="min-h-screen w-full max-w-[402px] mx-auto" style={{
+    <div className="w-full max-w-[402px] mx-auto" style={{
       background: 'linear-gradient(180deg, rgba(0, 0, 0, 1) 57%, rgba(34, 34, 34, 1) 100%)',
-      height: '874px'
+      height: '874px',
+      position: 'relative'
     }}>
       {/* Progress Bar */}
-      <div style={{ position: 'absolute', left: '24px', top: '40px', width: '354px', height: '6.46px' }}>
-        <div style={{ position: 'absolute', left: '0px', top: '0px', width: '112.3px', height: '6.46px', background: '#99CFFF', borderRadius: '8.61px' }}></div>
-        <div style={{ position: 'absolute', left: '119.83px', top: '0px', width: '112.3px', height: '6.46px', background: '#666666', borderRadius: '8.61px' }}></div>
-        <div style={{ position: 'absolute', left: '239.67px', top: '0px', width: '112.3px', height: '6.46px', background: '#666666', borderRadius: '8.61px' }}></div>
+      <div style={{ position: 'absolute', left: '32px', top: '40px', width: '338px', height: '6.46px' }}>
+        <div style={{ position: 'absolute', left: 0, top: 0, width: 'calc((338px - 16px)/3)', height: '6.46px', background: '#99CFFF', borderRadius: '8.61px' }}></div>
+        <div style={{ position: 'absolute', left: 'calc(((338px - 16px)/3) + 8px)', top: 0, width: 'calc((338px - 16px)/3)', height: '6.46px', background: '#666666', borderRadius: '8.61px' }}></div>
+        <div style={{ position: 'absolute', left: 'calc(2 * (((338px - 16px)/3) + 8px))', top: 0, width: 'calc((338px - 16px)/3)', height: '6.46px', background: '#666666', borderRadius: '8.61px' }}></div>
       </div>
 
       {/* Main Content */}
-      <div style={{ position: 'absolute', left: '24px', top: '210px', width: '354px', height: '624px', display: 'flex', justifyContent: 'center' }}>
-        <div style={{ width: '354px', height: '624px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '264px', padding: '0px 1px' }}>
+      <div style={{ position: 'absolute', left: '32px', top: '210px', bottom: '40px', width: '338px', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: '338px', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '264px', padding: '0px' }}>
           {/* Logo Section */}
-          <div style={{ width: '352px', height: '143px' }}>
-            <div style={{ width: '352px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ width: '352px', display: 'flex', flexDirection: 'column', padding: '0px 56px 0px 59px' }}>
+          <div style={{ width: '338px', height: '143px' }}>
+            <div style={{ width: '338px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ width: '338px', display: 'flex', flexDirection: 'column', padding: '0px 46px 0px 49px' }}>
                 <p 
                   style={{
                     fontFamily: 'Inter',
@@ -74,9 +75,9 @@ export const WelcomePage = () => {
 
           {/* Bottom Section */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <div style={{ width: '338px', height: '201px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div style={{ width: '338px', height: '217px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
               {/* Text Bottom */}
-              <div style={{ width: '354px' }}>
+              <div style={{ width: '338px' }}>
                 <p style={{
                   margin: 0,
                   fontFamily: 'Inter',
@@ -102,7 +103,7 @@ export const WelcomePage = () => {
               </div>
               
               {/* Button Group */}
-              <div style={{ width: '352px', height: '120.06px', position: 'relative' }}>
+              <div style={{ width: '338px', height: '120.06px', position: 'relative' }}>
                 {/* Get Started Button */}
                 <button
                   onClick={() => navigate('/permission')}
@@ -110,7 +111,7 @@ export const WelcomePage = () => {
                     position: 'absolute',
                     left: '0px',
                     top: '0px',
-                    width: '352px',
+                    width: '338px',
                     height: '51px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -129,12 +130,12 @@ export const WelcomePage = () => {
                     alignItems: 'center',
                     gap: '10.764px',
                     padding: '4.305px 17.222px',
-                    width: '352px',
+                    width: '338px',
                     height: '52px',
                     borderRadius: '238.951px'
                   }}>
                     <span style={{
-                      width: '352px',
+                      width: '338px',
                       fontFamily: 'Inter',
                       fontWeight: 600,
                       fontSize: '17.222px',
@@ -154,7 +155,7 @@ export const WelcomePage = () => {
                     position: 'absolute',
                     left: '0px',
                     top: '68.4px',
-                    width: '352px',
+                    width: '338px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
