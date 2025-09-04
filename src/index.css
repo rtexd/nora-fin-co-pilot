@@ -8,43 +8,36 @@
 
 @layer base {
   :root {
-    /* NORA Dark Theme */
-    --background: 220 15% 8%;
-    --foreground: 0 0% 98%;
-
-    --card: 220 15% 10%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 220 15% 10%;
-    --popover-foreground: 0 0% 98%;
-
-    /* NORA Brand Colors */
-    --nora-blue: 208 100% 80%;
-    --nora-purple: 243 100% 72%; 
-    --nora-pink: 319 100% 76%;
-    --nora-yellow: 44 100% 58%;
-
-    /* Semantic Colors */
-    --primary: 243 100% 72%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 220 15% 12%;
-    --muted-foreground: 220 5% 65%;
-
-    --accent: 208 100% 80%;
-    --accent-foreground: 220 15% 8%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 243 100% 72%;
-
-    --radius: 12px;
+    /* NORA Design System Colors (HSL format) */
+    --background: 0 0% 6%;           /* #0f0f0f - Very dark gray/black */
+    --foreground: 0 0% 98%;          /* #fafafa - Almost white */
+    --card: 0 0% 8%;                 /* #141414 - Dark gray */
+    --card-foreground: 0 0% 98%;     /* #fafafa - Almost white */
+    --popover: 0 0% 8%;              /* #141414 - Dark gray */
+    --popover-foreground: 0 0% 98%;  /* #fafafa - Almost white */
+    --primary: 45 100% 51%;          /* #ffd700 - NORA Yellow */
+    --primary-foreground: 0 0% 6%;   /* #0f0f0f - Very dark gray/black */
+    --secondary: 0 0% 14%;           /* #242424 - Medium dark gray */
+    --secondary-foreground: 0 0% 98%; /* #fafafa - Almost white */
+    --muted: 0 0% 14%;               /* #242424 - Medium dark gray */
+    --muted-foreground: 0 0% 64%;    /* #a3a3a3 - Medium gray */
+    --accent: 0 0% 14%;              /* #242424 - Medium dark gray */
+    --accent-foreground: 0 0% 98%;   /* #fafafa - Almost white */
+    --destructive: 0 84% 60%;        /* #f56565 - Red */
+    --destructive-foreground: 0 0% 98%; /* #fafafa - Almost white */
+    --border: 0 0% 20%;              /* #333333 - Dark border */
+    --input: 0 0% 14%;               /* #242424 - Medium dark gray */
+    --ring: 45 100% 51%;             /* #ffd700 - NORA Yellow */
+    --radius: 0.75rem;               /* 12px - Border radius */
+    
+    /* NORA Specific Colors */
+    --nora-yellow: 45 100% 51%;      /* #ffd700 - Primary brand color */
+    --nora-yellow-light: 45 100% 65%; /* Lighter variant */
+    --nora-yellow-dark: 45 100% 40%;  /* Darker variant */
+    --nora-black: 0 0% 6%;           /* #0f0f0f - Primary background */
+    --nora-gray: 0 0% 64%;           /* #a3a3a3 - Text secondary */
+    --nora-gray-light: 0 0% 80%;     /* #cccccc - Text tertiary */
+    --nora-gray-dark: 0 0% 20%;      /* #333333 - Borders/dividers */
 
     /* Layout Vars (frame 402x874 + safe padding) */
     --app-width: 402px;
