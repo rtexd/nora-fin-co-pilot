@@ -1,9 +1,7 @@
-// @ts-ignore
 import { ButtonHTMLAttributes, ReactNode } from 'react';
-import React from 'react';
 
 export interface NoraButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline-soft';
   size?: 'sm' | 'md' | 'lg';
   children: ReactNode;
   fullWidth?: boolean;
@@ -17,18 +15,18 @@ export const NoraButton = ({
   className = '',
   ...props 
 }: NoraButtonProps) => {
-  const baseClasses = 'font-inter font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed rounded-full focus:outline-none focus:ring-2 focus:ring-nora-yellow focus:ring-offset-2 focus:ring-offset-black';
+  const baseClasses = 'font-inter font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed rounded-[2222px] flex items-center justify-center';
   
   const variantClasses = {
-    primary: 'bg-white text-black hover:bg-gray-100 active:bg-gray-200',
-    secondary: 'bg-nora-yellow text-black hover:bg-nora-yellow-light active:bg-nora-yellow-dark',
-    ghost: 'bg-transparent text-white hover:bg-white/10 active:bg-white/20',
-    outline: 'bg-transparent border border-white/20 text-white hover:bg-white/10 hover:border-white/40 active:bg-white/20'
+    primary: 'bg-gradient-to-r from-[#99CEFF] via-[#A759D3] via-[#D8505B] to-[#FFC62B] text-white border-transparent',
+    secondary: 'btn-nora-secondary',
+    ghost: 'bg-[rgba(0,0,0,0.2)] text-[#717171] hover:text-white border-none',
+    'outline-soft': 'bg-[rgba(0,0,0,0.2)] text-[#717171] hover:text-white border-none'
   };
 
   const sizeClasses = {
     sm: 'px-4 py-2 text-sm h-10',
-    md: 'px-6 py-3 text-base h-12',
+    md: 'px-7 py-3 text-base h-[52px] leading-[1.5em]',
     lg: 'px-8 py-4 text-lg h-14'
   };
 
