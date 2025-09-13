@@ -74,8 +74,8 @@ export const WelcomePage = () => {
           </div>
 
           {/* Bottom Section */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <div style={{ width: '338px', height: '217px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', flex: 1 }}>
+            <div style={{ width: '338px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
               {/* Text Bottom */}
               <div style={{ width: '338px' }}>
                 <p style={{
