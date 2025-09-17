@@ -13,9 +13,10 @@ export const NoraButton = ({
   children, 
   fullWidth = false,
   className = '',
+  style,
   ...props 
 }: NoraButtonProps) => {
-  const baseClasses = 'font-inter font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed rounded-[2222px] flex items-center justify-center';
+  const baseClasses = 'font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed rounded-[2222px] flex items-center justify-center';
   
   const variantClasses = {
     primary: 'bg-gradient-to-r from-[#99CEFF] via-[#A759D3] via-[#D8505B] to-[#FFC62B] text-white border-transparent',
@@ -41,6 +42,10 @@ export const NoraButton = ({
         ${widthClass}
         ${className}
       `.replace(/\s+/g, ' ').trim()}
+      style={{ 
+        fontFamily: 'SF Pro Text, SF Pro, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+        ...(style || {})
+      }}
       {...props}
     >
       {children}

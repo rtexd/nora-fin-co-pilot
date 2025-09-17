@@ -11,28 +11,36 @@ export const WelcomePage = () => {
       position: 'relative'
     }}>
       {/* Progress Bar */}
-      <div style={{ position: 'absolute', left: '32px', top: '40px', width: '338px', height: '6.46px' }}>
-        <div style={{ position: 'absolute', left: 0, top: 0, width: 'calc((338px - 16px)/3)', height: '6.46px', background: '#99CFFF', borderRadius: '8.61px' }}></div>
-        <div style={{ position: 'absolute', left: 'calc(((338px - 16px)/3) + 8px)', top: 0, width: 'calc((338px - 16px)/3)', height: '6.46px', background: '#666666', borderRadius: '8.61px' }}></div>
-        <div style={{ position: 'absolute', left: 'calc(2 * (((338px - 16px)/3) + 8px))', top: 0, width: 'calc((338px - 16px)/3)', height: '6.46px', background: '#666666', borderRadius: '8.61px' }}></div>
+      <div style={{ position: 'absolute', left: 'var(--pad-x)', top: 'var(--pad-y)', width: 'calc(100% - (var(--pad-x) * 2))', height: '6.46px' }}>
+        <div style={{ position: 'absolute', left: 0, top: 0, width: 'calc((100% - 16px)/3)', height: '6.46px', background: '#99CFFF', borderRadius: '8.61px' }}></div>
+        <div style={{ position: 'absolute', left: 'calc(((100% - 16px)/3) + 8px)', top: 0, width: 'calc((100% - 16px)/3)', height: '6.46px', background: '#666666', borderRadius: '8.61px' }}></div>
+        <div style={{ position: 'absolute', left: 'calc(2 * ((((100% - 16px)/3)) + 8px))', top: 0, width: 'calc((100% - 16px)/3)', height: '6.46px', background: '#666666', borderRadius: '8.61px' }}></div>
       </div>
 
       {/* Main Content */}
-      <div style={{ position: 'absolute', left: '32px', top: '210px', bottom: '40px', width: '338px', display: 'flex', justifyContent: 'center' }}>
-        <div style={{ width: '338px', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '264px', padding: '0px' }}>
+      <div style={{ position: 'absolute', left: 'var(--pad-x)', top: '210px', bottom: 'var(--pad-y)', width: 'calc(100% - (var(--pad-x) * 2))', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0px', position: 'relative' }}>
           {/* Logo Section */}
-          <div style={{ width: '338px', height: '143px' }}>
-            <div style={{ width: '338px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ width: '338px', display: 'flex', flexDirection: 'column', padding: '0px 46px 0px 49px' }}>
+          <div style={{ width: '100%', height: '143px' }}>
+            <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ width: '100%', display: 'flex', flexDirection: 'column', padding: '0px 46px 0px 49px' }}>
                 <p 
                   style={{
+<<<<<<< Updated upstream
                     fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
                     fontWeight: 400,
                     fontSize: '21.397px',
                     lineHeight: '1.2em',
                     letterSpacing: '0.05em',
+=======
+                    fontFamily: 'SF Pro Text, SF Pro, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                    fontWeight: 400,
+                    fontSize: '21.397px',
+                    lineHeight: '1.2em',
+                    letterSpacing: '0.09em',
+>>>>>>> Stashed changes
                     textAlign: 'left',
-                    color: '#EDEDED',
+                    color: '#FFFFFF',
                     textShadow: '0px 0px 0.8916px rgba(0, 0, 0, 0.04), 0px 1.7831px 17.7419px rgba(32, 127, 251, 0.6), 0px -6.2409px 21.7539px rgba(43, 0, 255, 0.58)'
                   }}
                 >
@@ -57,11 +65,19 @@ export const WelcomePage = () => {
               </div>
               <p 
                 style={{
+<<<<<<< Updated upstream
                   fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
                   fontWeight: 400,
                   fontSize: '20.506px',
                   lineHeight: '1.2em',
                   letterSpacing: '0.05em',
+=======
+                  fontFamily: 'SF Pro Text, SF Pro, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '20.506px',
+                  lineHeight: '1.2em',
+                  letterSpacing: '0.09em',
+>>>>>>> Stashed changes
                   textAlign: 'center',
                   color: '#FFFFFF',
                   width: '234px',
@@ -73,14 +89,24 @@ export const WelcomePage = () => {
             </div>
           </div>
 
+<<<<<<< Updated upstream
           {/* Bottom Section */}
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', flex: 1 }}>
             <div style={{ width: '338px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+=======
+          {/* Bottom Section - pinned 40px from page bottom via parent bounds */}
+          <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
+            <div style={{ width: '100%', height: '217px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+>>>>>>> Stashed changes
               {/* Text Bottom */}
-              <div style={{ width: '338px' }}>
+              <div style={{ width: '100%' }}>
                 <p style={{
                   margin: 0,
+<<<<<<< Updated upstream
                   fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
+=======
+                  fontFamily: 'SF Pro Text, SF Pro, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+>>>>>>> Stashed changes
                   fontWeight: 600,
                   fontSize: '17.222px',
                   lineHeight: '1.2em',
@@ -91,7 +117,11 @@ export const WelcomePage = () => {
                 </p>
                 <p style={{
                   marginTop: '10px',
+<<<<<<< Updated upstream
                   fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
+=======
+                  fontFamily: 'SF Pro Text, SF Pro, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+>>>>>>> Stashed changes
                   fontWeight: 400,
                   fontSize: '17.222px',
                   lineHeight: '1.2em',
@@ -103,7 +133,7 @@ export const WelcomePage = () => {
               </div>
               
               {/* Button Group */}
-              <div style={{ width: '338px', height: '120.06px', position: 'relative' }}>
+              <div style={{ width: '100%', height: '120.06px', position: 'relative' }}>
                 {/* Get Started Button */}
                 <button
                   onClick={() => navigate('/permission')}
@@ -111,14 +141,14 @@ export const WelcomePage = () => {
                     position: 'absolute',
                     left: '0px',
                     top: '0px',
-                    width: '338px',
+                    width: '100%',
                     height: '51px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
                     borderRadius: '2391.66px',
-                    border: '1px solid #5856D6',
+                    border: 'none',
                     background: 'transparent',
                     cursor: 'pointer'
                   }}
@@ -130,13 +160,24 @@ export const WelcomePage = () => {
                     alignItems: 'center',
                     gap: '10.764px',
                     padding: '4.305px 17.222px',
-                    width: '338px',
+                    width: '100%',
                     height: '52px',
-                    borderRadius: '238.951px'
+                    borderRadius: '238.951px',
+                    background: 'transparent',
+                    border: '2px solid transparent',
+                    // Keep only gradient outline; make interior fully transparent
+                    backgroundImage: 'linear-gradient(transparent, transparent), linear-gradient(90deg, #99CEFC 0%, #A759D3 28%, #D85058 75%, #FFC628 100%)',
+                    backgroundOrigin: 'border-box',
+                    backgroundClip: 'padding-box, border-box'
                   }}>
                     <span style={{
+<<<<<<< Updated upstream
                       width: '338px',
                       fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
+=======
+                      width: '100%',
+                      fontFamily: 'SF Pro Text, SF Pro, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+>>>>>>> Stashed changes
                       fontWeight: 600,
                       fontSize: '17.222px',
                       lineHeight: '1.5em',
@@ -155,7 +196,7 @@ export const WelcomePage = () => {
                     position: 'absolute',
                     left: '0px',
                     top: '68.4px',
-                    width: '338px',
+                    width: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
@@ -189,7 +230,7 @@ export const WelcomePage = () => {
                         padding: '8.611px 0px'
                       }}>
                         <span style={{
-                          fontFamily: 'Inter',
+                          fontFamily: 'SF Pro Text, SF Pro, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
                           fontWeight: 600,
                           fontSize: '17.222px',
                           lineHeight: '1.5em',

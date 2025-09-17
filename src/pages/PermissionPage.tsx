@@ -1,3 +1,4 @@
+
 import { useNavigate } from 'react-router-dom';
 import { NoraLayout } from '../components/NoraLayout';
 import { NoraLogo } from '../components/NoraLogo';
@@ -12,7 +13,7 @@ export const PermissionPage = () => {
         <div className="mb-12 text-center">
           <NoraLogo size="md" animated={false} />
           <p 
-            className="text-[#B3B3B3] font-inter font-normal leading-[1.2] tracking-[0.04em] text-center max-w-[226px] mx-auto mt-4"
+            className="text-white font-inter font-normal leading-[1.2] tracking-[0.04em] text-center max-w-[226px] mx-auto mt-4"
             style={{
               fontSize: '19.051px',
               textShadow: '0px 0px 0.8283px rgba(0, 0, 0, 0.04), 0px 1.6566px 16.4833px rgba(32, 127, 251, 0.6), 0px -5.7982px 20.2107px rgba(43, 0, 255, 0.58)'
