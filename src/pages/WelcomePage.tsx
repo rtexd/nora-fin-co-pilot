@@ -26,7 +26,7 @@ export const WelcomePage = () => {
               <div style={{ width: '338px', display: 'flex', flexDirection: 'column', padding: '0px 46px 0px 49px' }}>
                 <p 
                   style={{
-                    fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
+                    fontFamily: 'Inter',
                     fontWeight: 400,
                     fontSize: '21.397px',
                     lineHeight: '1.2em',
@@ -57,7 +57,7 @@ export const WelcomePage = () => {
               </div>
               <p 
                 style={{
-                  fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
+                  fontFamily: 'Inter',
                   fontWeight: 400,
                   fontSize: '20.506px',
                   lineHeight: '1.2em',
@@ -80,7 +80,7 @@ export const WelcomePage = () => {
               <div style={{ width: '338px' }}>
                 <p style={{
                   margin: 0,
-                  fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
+                  fontFamily: 'Inter',
                   fontWeight: 600,
                   fontSize: '17.222px',
                   lineHeight: '1.2em',
@@ -91,7 +91,7 @@ export const WelcomePage = () => {
                 </p>
                 <p style={{
                   marginTop: '10px',
-                  fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
+                  fontFamily: 'Inter',
                   fontWeight: 400,
                   fontSize: '17.222px',
                   lineHeight: '1.2em',
@@ -136,7 +136,7 @@ export const WelcomePage = () => {
                   }}>
                     <span style={{
                       width: '338px',
-                      fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
+                      fontFamily: 'Inter',
                       fontWeight: 600,
                       fontSize: '17.222px',
                       lineHeight: '1.5em',

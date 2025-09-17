@@ -21,7 +21,6 @@ export default {
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
 				'montserrat': ['Montserrat Alternates', 'sans-serif'],
-				'sf-pro': ['SF Pro Display', 'SF Pro Text', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
