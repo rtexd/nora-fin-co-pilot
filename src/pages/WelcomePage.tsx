@@ -62,7 +62,7 @@ export const WelcomePage = () => {
                     fontWeight: 400,
                     fontSize: '20.506px',
                     lineHeight: '1.2em',
-                    letterSpacing: '0.35em',
+                    letterSpacing: '0.45em',
                     textAlign: 'left',
                     color: '#B3B3B3',
                     width: '243px',
