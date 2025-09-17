@@ -30,7 +30,7 @@ export const WelcomePage = () => {
                     fontWeight: 400,
                     fontSize: '21.397px',
                     lineHeight: '1.2em',
-                    letterSpacing: '0.3em',
+                    letterSpacing: '4%',
                     textAlign: 'left',
                     color: '#EDEDED',
                     textShadow: '0px 0px 0.8916px rgba(0, 0, 0, 0.04), 0px 1.7831px 17.7419px rgba(32, 127, 251, 0.6), 0px -6.2409px 21.7539px rgba(43, 0, 255, 0.58)'
@@ -55,23 +55,21 @@ export const WelcomePage = () => {
                   NORA
                 </h1>
               </div>
-              <div style={{ width: '338px', padding: '0px 46px 0px 49px' }}>
-                <p 
-                  style={{
-                    fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '20.506px',
-                    lineHeight: '1.2em',
-                    letterSpacing: '0.45em',
-                    textAlign: 'left',
-                    color: '#FFFFFF',
-                    width: '243px',
-                    textShadow: '0px 0px 0.8916px rgba(0, 0, 0, 0.04), 0px 1.7831px 17.7419px rgba(32, 127, 251, 0.6), 0px -6.2409px 21.7539px rgba(43, 0, 255, 0.58)'
-                  }}
-                >
-                  your financial co-pilot
-                </p>
-              </div>
+              <p 
+                style={{
+                  fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '20.506px',
+                  lineHeight: '1.2em',
+                  letterSpacing: '4%',
+                  textAlign: 'center',
+                  color: '#B3B3B3',
+                  width: '234px',
+                  textShadow: '0px 0px 0.8916px rgba(0, 0, 0, 0.04), 0px 1.7831px 17.7419px rgba(32, 127, 251, 0.6), 0px -6.2409px 21.7539px rgba(43, 0, 255, 0.58)'
+                }}
+              >
+                your financial co-pilot
+              </p>
             </div>
           </div>
 
