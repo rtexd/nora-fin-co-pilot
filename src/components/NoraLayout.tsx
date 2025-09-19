@@ -15,15 +15,13 @@ export const NoraLayout = ({
 }: NoraLayoutProps) => {
   return (
     <div
-      className="nora-background font-inter text-foreground mx-auto"
+      className="min-h-screen nora-background font-inter text-foreground w-full mx-auto"
       style={{
-        width: '402px',
-        height: '874px',
-        paddingLeft: '32px',
-        paddingRight: '32px',
-        paddingTop: '40px',
-        paddingBottom: '40px',
-        position: 'relative'
+        maxWidth: 'var(--app-width)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
+        paddingTop: 'var(--pad-y)',
+        paddingBottom: 'var(--pad-y)'
       }}
     >
       {showProgress && (
@@ -41,7 +39,7 @@ export const NoraLayout = ({
         </div>
       )}
       
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col min-h-screen">
         {children}
       </div>
     </div>

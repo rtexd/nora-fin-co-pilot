@@ -77,7 +77,7 @@ export const WelcomePage = () => {
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', flex: 1 }}>
             <div style={{ width: '338px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
               {/* Text Bottom */}
-              <div style={{ width: '338px' }}>
+              <div style={{ width: '338px', minHeight: '62px' }}>
                 <p style={{
                   margin: 0,
                   fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
