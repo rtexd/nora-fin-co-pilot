@@ -18,12 +18,12 @@ export const WelcomePage = () => {
       </div>
 
       {/* Main Content */}
-      <div style={{ position: 'absolute', left: '32px', top: '86px', bottom: '40px', width: '338px', display: 'flex', justifyContent: 'center' }}>
-        <div style={{ width: '338px', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '0px' }}>
+      <div style={{ position: 'absolute', left: '32px', top: '210px', bottom: '40px', width: '338px', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: '338px', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '264px', padding: '0px' }}>
           {/* Logo Section */}
           <div style={{ width: '338px', height: '143px' }}>
             <div style={{ width: '338px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ width: '338px', display: 'flex', flexDirection: 'column', padding: '0px 46px 0px 49px' }}>
+              <div style={{ width: '338px', display: 'flex', flexDirection: 'column', padding: '0px 52px 0px 52px' }}>
                 <p 
                   style={{
                     fontFamily: 'SF Pro Display, SF Pro Text, system-ui, sans-serif',
