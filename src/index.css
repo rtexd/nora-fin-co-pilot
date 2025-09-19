@@ -260,7 +260,9 @@
   /* Center the app frame in the viewport */
   #root {
     min-height: 100vh;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
   }
 }
