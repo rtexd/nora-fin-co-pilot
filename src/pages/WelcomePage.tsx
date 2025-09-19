@@ -5,10 +5,12 @@ export const WelcomePage = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="w-full max-w-[402px] mx-auto" style={{
-      background: 'linear-gradient(180deg, rgba(0, 0, 0, 1) 57%, rgba(34, 34, 34, 1) 100%)',
+    <div style={{
+      width: '402px',
       height: '874px',
-      position: 'relative'
+      background: 'linear-gradient(180deg, rgba(0, 0, 0, 1) 57%, rgba(34, 34, 34, 1) 100%)',
+      position: 'relative',
+      margin: '0 auto'
     }}>
       {/* Progress Bar */}
       <div style={{ position: 'absolute', left: '32px', top: '40px', width: '338px', height: '6.46px' }}>
