@@ -18,7 +18,7 @@ export const WelcomePage = () => {
       </div>
 
       {/* Main Content */}
-      <div style={{ position: 'absolute', left: '32px', top: '50%', transform: 'translateY(-50%)', width: '338px', height: '550px', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ position: 'absolute', left: '32px', top: '86px', bottom: '40px', width: '338px', display: 'flex', justifyContent: 'center' }}>
         <div style={{ width: '338px', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '0px' }}>
           {/* Logo Section */}
           <div style={{ width: '338px', height: '143px' }}>
