@@ -14,18 +14,15 @@ export const NoraLayout = ({
   totalSteps = 3 
 }: NoraLayoutProps) => {
   return (
-    <div
-      className="min-h-screen nora-background font-inter text-foreground w-full mx-auto"
-      style={{
-        maxWidth: 'var(--app-width)',
-        paddingLeft: 'var(--pad-x)',
-        paddingRight: 'var(--pad-x)',
-        paddingTop: 'var(--pad-y)',
-        paddingBottom: 'var(--pad-y)'
-      }}
-    >
+    <div style={{
+      width: '402px',
+      height: '874px',
+      background: 'linear-gradient(180deg, rgba(0, 0, 0, 1) 57%, rgba(34, 34, 34, 1) 100%)',
+      position: 'relative',
+      margin: '0 auto'
+    }}>
       {showProgress && (
-        <div>
+        <div style={{ position: 'absolute', left: '32px', top: '40px', width: '338px' }}>
           <div className="flex gap-2">
             {Array.from({ length: totalSteps }, (_, i) => (
               <div
@@ -34,12 +31,19 @@ export const NoraLayout = ({
               />
             ))}
           </div>
-          {/* Spacer between tabs and main content per design */}
-          <div style={{ height: 'var(--gap-tabs-main)' }} />
         </div>
       )}
       
-      <div className="flex flex-col min-h-screen">
+      <div style={{
+        position: 'absolute',
+        left: '32px',
+        right: '32px',
+        top: showProgress ? '210px' : '40px',
+        bottom: '40px',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'auto'
+      }}>
         {children}
       </div>
     </div>
